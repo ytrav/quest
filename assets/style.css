@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid rgba(255, 0, 0, 0.555); */
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: #cad2c5;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    bottom: -200px;
+    left: 0;
+    right: 0;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #84a98c;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+}
+
+header h2,
+header a {
+    color: #fff;
+}
+
+div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header h2:hover,
+a:hover {
+    color: #cad2c5;
+}
+
+header a {
+    margin: 0px 5px 0px 5px;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    font-size: 1.4em;
+    height: 400px;
+}
+
+article {
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 1.4em;
+    height: 400px;
+    border: 2px solid #2f3e46;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #e9eee6;
+}
+
+form {
+    border: 2px solid #2f3e46;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #e9eee6;
+    height: 100%;
+    width: 300px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+#incorrect {
+    visibility: hidden;
+    font-size: 0.8em;
+    color: rgb(163, 0, 0);
+}
+
+input {
+    display: block;
+    font-size: 0.9em;
+    background-color: transparent;
+    border-style: none none solid none;
+    padding: 5px;
+    transition: border 0.3s ease-out;
+    width: 96%;
+}
+
+input:focus {
+    border: 2px solid #84a98c;
+    border-style: none none solid none;
+    outline: none;
+}
+
+button {
+    border: none;
+    background-color: #52796f;
+    color: white;
+    padding: 5px;
+    font-size: 1em;
+    border-radius: 6px;
+    width: 100%;
+}
+button:hover {
+    cursor: pointer;
+    background-color: #354f52;
+}
+
+button[disabled] {
+    filter: brightness(80%);
+    cursor: not-allowed;
+}
+
+button:active {
+    background-color: #2f3e46;
+}
+
+footer {
+    background-color: #354f52;
+    color: white;
+    height: 200px;
+    padding: 20px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+select {
+    font-size: 1em;
+    background-color: #52796f;
+    color: white;
+}
+
+option[disabled] {
+    color: #a1a59f;
+}
+
+section {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+section button {
+    width: auto;
+}
+
+section img {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
+article {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+summary {
+    width: 70%;
+}
+
+summary,
+aside {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.balance {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    align-items: center;
+    grid-template-areas:
+        "card1 num1 sum1 dep1 with1"
+        "card2 num2 sum2 dep2 with2"
+        "card3 num3 sum3 dep3 with3";
+}
+
+.card1 {
+    grid-area: card1;
+}
+
+.card2 {
+    grid-area: card2;
+}
+
+.card3 {
+    grid-area: card3;
+}
+
+.num1 {
+    grid-area: num1;
+}
+
+.num2 {
+    grid-area: num2;
+}
+
+.num3 {
+    grid-area: num3;
+}
+
+.sum1 {
+    grid-area: sum1;
+}
+
+.sum2 {
+    grid-area: sum2;
+}
+
+.sum3 {
+    grid-area: sum3;
+}
+
+.dep1 {
+    grid-area: dep1;
+}
+
+.dep2 {
+    grid-area: dep2;
+}
+
+.dep3 {
+    grid-area: dep3;
+}
+
+.with1 {
+    grid-area: with1;
+}
+
+.with2 {
+    grid-area: with2;
+}
+
+.with3 {
+    grid-area: with3;
+}
