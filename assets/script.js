@@ -24,12 +24,19 @@ const pass = xmlDoc.getElementsByTagName("pass")[2].childNodes[0].nodeValue;
 var balance;
 
 if (balance == undefined) {
-    balance = 654;
+    if (localStorage.getItem("balance") == undefined) {
+        balance = 654;
+    } else {
+        balance = Number(localStorage.getItem("balance"));
+    }
+    
 }
 
 document.getElementById("balance").innerHTML = balance;
 
-localStorage.setItem("balance", balance);
+balString = balance.toString()
+
+localStorage.setItem("balance", );
 
 
 function login() {
@@ -80,7 +87,9 @@ function withdraw() {
     //     }
     // }
     if (amount < balance && amount != NaN) {
-        alert("success")
+        balance -= amount;
+        document.getElementById("balance").innerHTML = balance;
+        localStorage.setItem("balance", balance.toString());
     } else {
         alert("Please type in a number that equals or is less than " + balance)
     }
