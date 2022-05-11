@@ -60,13 +60,13 @@ function subtract() {
     alert("Transaction complete. Thanks for using Lower Shelf Bank.\nHave a nice day!")
     if (balance <= 0) {
         alert("Incoming message:");
-        alert("Hey, it's me, Anton. Thanks for withdrawing money for me to buy Cuphead.");
-        alert("I wonder how you had exactly the amount of money in hryvnias for a key.");
-        alert("Well, coincidences happen.");
-        alert("Anyway, thanks for the mnoey!");
-        alert("*money");
-        alert("wait, how do you disable this thing");
-        alert("oh wait, here's the butt--");
+        alert(">\nHey, it's me, Anton. Thanks for withdrawing money for me to buy Cuphead.\n<");
+        alert(">\nI wonder how you had exactly the amount of money in hryvnias for a key.\n<");
+        alert(">\nWell, coincidences happen.\n<");
+        alert(">\nAnyway, thanks for the mnoey!\n<");
+        alert(">\n*money\n<");
+        alert(">\nwait, how do you disable this thing\n<");
+        alert(">\noh wait, here's the butt--\n<");
         alert("Signal lost. Ending session...");
     };
     return;
@@ -78,12 +78,17 @@ function withdraw() {
     } else {
         amount = prompt("What amount of funds would you like to withdraw? Current amount is " + balance);
         amount = Number(amount)
-        if (amount <= balance && amount != NaN) {
-            alert("Transaction in progress...")
-            let timer = setTimeout(subtract, 2000);
+        if (amount == "" || amount == null ) {
+            alert("Transaction canceled. Thanks for using Lower Shelf Bank.\nHave a nice day!")
         } else {
-            alert("Please type in a number that equals or is less than " + balance)
+            if (amount <= balance && amount != NaN && amount != null && amount != undefined) {
+                alert("Transaction in progress...")
+                let timer = setTimeout(subtract, 2000);
+            } else {
+                alert("Please type in a number that equals or is less than " + balance)
+            }
         }
+
     }
 
 }
