@@ -30,7 +30,7 @@ function login() {
         if (tpass == klosP) {
             document.getElementById("email").value = "";
             document.getElementById("password").value = "";
-            localStorage.setItem("autoLogin", "true")
+            localStorage.setItem("autoLogin", "true");
             location.replace("assets/landing/landing.html");
             return;
         } else {
