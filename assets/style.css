@@ -45,6 +45,7 @@ a {
 header h2:hover,
 a:hover {
     color: #cad2c5;
+    cursor: pointer;
 }
 
 header a {
@@ -260,4 +261,91 @@ aside {
 
 .with3 {
     grid-area: with3;
+}
+
+@media only screen and (max-width: 825px) {
+    .balance {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 0px 10px;
+        grid-auto-flow: row;
+        justify-content: center;
+        align-items: center;
+        grid-template-areas:
+            "card1 num1 num1 sum1"
+            "dep1 dep1 with1 with1"
+            "card2 num2 num2 sum2"
+            "dep2 dep2 with2 with2"
+            "card3 num3 num3 sum3" 
+            "dep3 dep3 with3 with3";
+    }
+
+    .card1 {
+        grid-area: card1;
+    }
+
+    .num1 {
+        grid-area: num1;
+    }
+
+    .sum1 {
+        grid-area: sum1;
+    }
+
+    .dep1 {
+        grid-area: dep1;
+    }
+
+    .with1 {
+        grid-area: with1;
+    }
+
+    .card2 {
+        grid-area: card2;
+    }
+
+    .num2 {
+        grid-area: num2;
+    }
+
+    .sum2 {
+        grid-area: sum2;
+    }
+
+    .dep2 {
+        grid-area: dep2;
+    }
+
+    .with2 {
+        grid-area: with2;
+    }
+
+    .card3 {
+        grid-area: card3;
+    }
+
+    .num3 {
+        grid-area: num3;
+    }
+
+    .sum3 {
+        grid-area: sum3;
+    }
+
+    .dep3 {
+        grid-area: dep3;
+    }
+
+    .with3 {
+        grid-area: with3;
+    }
+}
+
+
+@media only screen and (max-width: 410px) {
+    .balance button {
+        font-size: 0.8em;
+        overflow: hidden;
+    }
 }

@@ -4,22 +4,8 @@ var text = "<data><email>elegy@ramone.uk</email><email>infury@web.de</email><ema
 parser = new DOMParser();
 xmlDoc = parser.parseFromString(text, "text/xml");
 
-// document.getElementById("color0").innerHTML =
-//     xmlDoc.getElementsByTagName("color")[0].childNodes[0].nodeValue;
-// document.getElementById("make0").innerHTML =
-//     xmlDoc.getElementsByTagName("make")[0].childNodes[0].nodeValue;
-// document.getElementById("model0").innerHTML =
-//     xmlDoc.getElementsByTagName("model")[0].childNodes[0].nodeValue;
-// document.getElementById("drive0").innerHTML =
-//     xmlDoc.getElementsByTagName("drive")[0].childNodes[0].nodeValue;
-// document.getElementById("body0").innerHTML =
-//     xmlDoc.getElementsByTagName("body")[0].childNodes[0].nodeValue;
-
-const email = xmlDoc.getElementsByTagName("email")[4].childNodes[0].nodeValue;
-const pass = xmlDoc.getElementsByTagName("pass")[2].childNodes[0].nodeValue;
-
-// var withdrew = false;
-// localStorage.setItem(withdrew, withdrew);
+const hhJof = xmlDoc.getElementsByTagName("email")[4].childNodes[0].nodeValue;
+const klosP = xmlDoc.getElementsByTagName("pass")[2].childNodes[0].nodeValue;
 
 var balance;
 
@@ -29,14 +15,10 @@ if (balance == undefined) {
     } else {
         balance = Number(localStorage.getItem("balance"));
     }
-    
+
 }
 
-document.getElementById("balance").innerHTML = balance;
 
-balString = balance.toString()
-
-localStorage.setItem("balance", );
 
 
 function login() {
@@ -44,10 +26,11 @@ function login() {
     let temail = document.getElementById("email").value;
     let tpass = document.getElementById("password").value;
 
-    if (temail == email) {
-        if (tpass == pass) {
+    if (temail == hhJof) {
+        if (tpass == klosP) {
             document.getElementById("email").value = "";
             document.getElementById("password").value = "";
+            localStorage.setItem("autoLogin", "true")
             location.replace("assets/landing/landing.html");
             return;
         } else {
@@ -68,29 +51,42 @@ function incorrect() {
     return
 }
 
-function withdraw() {
-    console.log("start")
-    let amount = prompt("What amount of funds would you like to withdraw? Current amount is " + balance);
-    console.log("prompted");
-    console.log("numbered");
-    amount = Number(amount)
-    // if (amount == NaN) {
-    //     alert("Please type in a number");
-    //     return;
-    // } else {
-    //     console.log("is a number")
-    //     if (amount > balance) {
-    //         alert("Please type in a number that equals or is less than " + balance);
-    //     } else {
-    //         console.log("is less than zero");
-    //         alert("success");
-    //     }
-    // }
-    if (amount < balance && amount != NaN) {
-        balance -= amount;
-        document.getElementById("balance").innerHTML = balance;
-        localStorage.setItem("balance", balance.toString());
-    } else {
-        alert("Please type in a number that equals or is less than " + balance)
-    }
+var amount
+
+function subtract() {
+    balance -= amount;
+    document.getElementById("balance").innerHTML = balance;
+    localStorage.setItem("balance", balance.toString());
+    alert("Transaction complete. Thanks for using Lower Shelf Bank.\nHave a nice day!")
+    if (balance <= 0) {
+        alert("Incoming message:");
+        alert("Hey, it's me, Anton. Thanks for withdrawing money for me to buy Cuphead.");
+        alert("I wonder how you had exactly the amount of money in hryvnias for a key.");
+        alert("Well, coincidences happen.");
+        alert("Anyway, thanks for the mnoey!");
+        alert("*money");
+        alert("wait, how do you disable this thing");
+        alert("oh wait, here's the butt--");
+        alert("Signal lost. Ending session...");
+    };
+    return;
 }
+
+function withdraw() {
+    if (balance <= 0) {
+        alert("Sorry, you don't seem to have enough funds for a withdraw transaction.")
+    } else {
+        amount = prompt("What amount of funds would you like to withdraw? Current amount is " + balance);
+        amount = Number(amount)
+        if (amount <= balance && amount != NaN) {
+            alert("Transaction in progress...")
+            let timer = setTimeout(subtract, 2000);
+        } else {
+            alert("Please type in a number that equals or is less than " + balance)
+        }
+    }
+
+}
+
+
+
